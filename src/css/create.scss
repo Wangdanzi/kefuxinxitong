@@ -1,0 +1,37 @@
+.side{
+    width: 200px;
+    background-color: #fff;
+    font-size: 14px;
+    height: 1000px;
+    position: absolute;
+    left:60px;
+    top:60px;
+    // .side-in{
+    //     display: flex;
+    //     flex-direction:row;
+    //     justify-content:center;
+    //     text-align: center;
+    // }
+    padding-left: 20px;
+    padding-top: 20px;
+    .sideMsg{
+        line-height: 30px;
+    }
+    .sideFrom{
+        margin-top:50px;
+        line-height: 25px;
+        .customerMsg{
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+   
+}
+.main{
+    margin: 0 200px 0 235px;
+}
+.right{
+    position: absolute;
+    right: 0;
+    top:0;
+}

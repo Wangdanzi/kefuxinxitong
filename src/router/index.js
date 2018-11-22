@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import layout from '../components/findHouse.vue/layout.vue'
 import home from '../components/findHouse.vue/home.vue';
 import followUp from '../components/findHouse.vue/followUp.vue';

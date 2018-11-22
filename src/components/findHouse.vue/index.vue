@@ -74,7 +74,7 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 // 如果给style添加scoped属性，样式只会在当前组件生效
 // 实现原理： 如果给当前组件的style添加了scoped,,,,把当前组件中所有的div都增加一个随机的属性
 .home {

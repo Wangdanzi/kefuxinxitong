@@ -47,6 +47,6 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-@import "../../css/layout.scss";
+<style lang="less" scoped>
+@import "../../css/layout.less";
 </style>

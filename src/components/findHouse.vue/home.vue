@@ -101,7 +101,7 @@ export default {
 };
 </script>
 
- <style lang="scss" scoped>
-@import "../../css/home.scss";
+ <style lang="less" scoped>
+@import "../../css/home.less";
 </style>
 

@@ -72,6 +72,6 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
-@import "../../css/create.scss";
+<style lang='less' scoped>
+@import "../../css/create.less";
 </style>

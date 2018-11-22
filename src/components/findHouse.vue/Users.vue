@@ -247,7 +247,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .el-breadcrumb {
   // margin-bottom: 20px;
   font-size: 20px;

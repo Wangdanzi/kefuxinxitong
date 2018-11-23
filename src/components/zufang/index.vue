@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="zf-index">
     <el-container>
       <!-- 左侧边栏 -->
       <el-aside width="300px">
@@ -25,10 +25,10 @@
                   <p>客户姓名</p>
                   <p>王多多</p>
                 </li>
-                <li>
+                <li class="but">
                   <p>签约号码</p>
-                  <el-tag type="info">12345644564</el-tag>
-                  <a href="">点保存</a>
+                  <el-input  placeholder="签约号码"></el-input>
+                  <a href="">点我保存</a>
                 </li>
               </ul>
             </div>
@@ -54,15 +54,94 @@
         <!-- 类型 -->
         <div class="type">
           <el-tabs type="border-card" >
-            <el-tab-pane label="退房">退房</el-tab-pane>
             <el-tab-pane label="转租">
-              <el-button type="info">转租流程</el-button>
-              <el-button type="info">机构转退租规则</el-button>
+              <el-button type="info"  @click="flowPath = true">转租流程</el-button>
+               <!-- 点击跳出转租流程弹框 -->
+                <el-dialog
+                  :visible.sync="flowPath"
+                  width="22%"
+                  custom-class="bgc"
+                  :modal="false"
+                  :close-on-click-modal="false">
+                  <h3>转租流程</h3>
+                    <div class="one">
+                      <h4 style="text-align: center;">转租流程</h4>
+                      <p class="text">完成以下转租流程，巴乐兔保障退款</p>
+                      <ul>
+                        <li>
+                          <h5>利用巴乐兔APP提出转租申请</h5>
+                          <p>转租将根据您的租合同进行退款</p>
+                          <p>房东确认申请，修改出租金额及租期</p>
+                        </li>
+                        <li>
+                          <h5>找新租客，带看租房</h5>
+                          <p>普通转租</p>
+                          <p>加速转租</p>
+                         </li>
+                        <li>
+                          <h5>转租成功</h5>
+                          <p>新租客利用巴乐兔APP签约入住</p>
+                          <p>房东确认退款，巴乐兔保障退款</p>
+                        </li>
+                        <li>
+                           <h5>确认收款</h5>
+                           <p>查看退款明细，评价整个服务体验</p>
+                        </li>
+                      </ul>
+                    </div>
+                </el-dialog>
+              <el-button type="info"  @click="retreat = true">机构转退租规则</el-button>
+               <!-- 点击跳出转租流程弹框 -->
+                <el-dialog
+                  :visible.sync="retreat"
+                  width="22%"
+                  custom-class="retreat"
+                  :modal="false"
+                  :close-on-click-modal="false">
+                  <h3>机构转退租规则</h3>
+                  <div class="one">
+
+                    <ul class="retreat">
+                      <li class="top">
+                        机构：月利(分散式)-有效
+                      </li>
+                      <li>
+                        <h3>退租规则</h3>
+                        <h5>租满退租：</h5>
+                        <p>提前30天通知房东</p>
+                        <p>退款是否接受垫付：是</p>
+                        <p>退款扣费项：清洁费 () 水电费 ()</p>
+
+                        <h5>租期中退租：</h5>
+                        <p>退还租赁保证金 (否) </p>
+                        <p>剩余租金按 (日) 退还</p>
+                        <p>提前 (30) 天通知房东</p>
+                      </li>
+                      <li>
+                        <h3>转租规则</h3>
+                        <p>是否接受转租退款：是</p>
+                        <p>转退租联系人：张三</p>
+                        <br>
+                        <p>剩余租金退还：按日退还</p>
+                        <p>转退租联系人：张三</p>
+
+
+
+                        <h5>转租服务费计算规则：</h5>
+                        <p>自主转租：</p>
+                        <p>管家代找：</p>
+                        <p>清洁费：</p>
+                        <p>水电网煤：</p>
+                       </li>
+                    </ul>
+                  </div>
+                </el-dialog>
               <el-button type="info">租约</el-button>
               <el-button type="info">账单</el-button>
               <el-button type="info">合同</el-button>
             </el-tab-pane>
             <el-tab-pane label="续租">续租</el-tab-pane>
+            <el-tab-pane label="退房">退房</el-tab-pane>
           </el-tabs>
         </div>
         <!-- 转租信息 -->
@@ -146,81 +225,116 @@
       </el-main>
 
        <!-- 右侧边栏 -->
-      <!-- <el-aside width="500px">
+      <el-aside width="400px" >
        <p>编辑信息</p>
-       <el-input
-       style="height:400px"
-          placeholder="请输入内容"
-          >
-       </el-input>
-      </el-aside> -->
+       <!-- 编辑框 -->
+
+       <el-form ref="form" :model="sizeForm" label-height="100px" size:medium>
+          <el-form-item>
+            <el-input
+                type="textarea"
+                class="nuo"
+                placeholder="请输入内容"
+                >
+            </el-input>
+          </el-form-item>
+          <div class="ce">
+            <div class="time">
+              <p style="display:inline-block ;margin-right:20px">代办时间：</p>
+              <!-- 时间日期 -->
+              <el-date-picker
+              v-model="value1"
+              type="datetime"
+              clear-icon
+              placeholder="选择日期时间">
+             </el-date-picker>
+            </div>
+              <!-- 短信推送 -->
+            <div style="margin-top:10px;display:block;">
+              <el-checkbox fill v-model="checked">
+              IM短信推送转租流程
+              </el-checkbox >
+            </div>
+          </div>
+          <el-form-item class="but">
+             <el-button type="primary">保存</el-button>
+             <el-button>已解决</el-button>
+          </el-form-item>
+       </el-form>
+
+      </el-aside>
     </el-container>
   </div>
-
 </template>
 
 <script>
-export default {}
-</script>
-
-<style lang="scss" scoped>
-// 左侧边栏
-.el-aside {
-  ul {
-    padding-left: 0;
-  }
-  background-color: pink;
-  padding-left: 10px;
-  li > p:nth-of-type(1) {
-    color: #666;
-    margin-right: 10px;
-    display: inline-block;
-    width: 90px;
-    text-align: right;
-  }
-  li > p:nth-of-type(2) {
-    display: inline-block;
-    width: 50px;
-    text-align: left;
-  }
-}
-// 主内容部分
-.el-main {
-  .title {
-    background-color: skyblue;
-    height: 52px;
-    font-size: 18px;
-    line-height: 52px;
-    color: aquamarine;
-    margin-bottom: 10px;
-  }
-
-  // 转租信息
-  .sublet {
-    .cen {
-      .el-tag {
-        width: 50px;
-        margin-left: 20px;
-      }
+export default {
+  data() {
+    return {
+      pickerOptions1: {
+        shortcuts: [
+          {
+            text: '今天',
+            onClick(picker) {
+              picker.$emit('pick', new Date())
+            }
+          },
+          {
+            text: '昨天',
+            onClick(picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24)
+              picker.$emit('pick', date)
+            }
+          },
+          {
+            text: '一周前',
+            onClick(picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+              picker.$emit('pick', date)
+            }
+          }
+        ]
+      },
+      value1: '',
+      value2: '',
+      value3: '',
+      // 左侧边栏点击保存签约号码
+      input: '',
+      // 返回短信推送流程
+      checked: true,
+      // 侧边栏表单
+      sizeForm: {
+        name: ''
+      },
+      // 点击转租流程跳出对话框
+      flowPath: false,
+      // 点击转租流程跳出对话框
+      retreat: false
     }
   }
-  // ZU租约信息
-  .lease {
-  }
-  border-radius: 30px;
-  li {
-    padding-bottom: 10px;
-  }
-  p {
-    display: inline-block;
-    width: 150px;
-    text-align: right;
-  }
-  .el-tag {
-    width: 150px;
-    text-align: center;
-    margin-right: 20px;
-    background-color: #fff;
-  }
 }
+</script>
+
+<style lang=less>
+.el-dialog__header {
+  padding: 0;
+}
+.el-dialog__body {
+  padding: 0;
+  background-color: #e0ecff;
+  border: 1px solid #99ccff;
+  /* width: 400px; */
+}
+.el-input__inner {
+  width: 200px;
+}
+.el-textarea__inner {
+  height: 300px;
+}
+</style>
+
+<style lang="less" scoped>
+@import '../../css/style.less';
 </style>

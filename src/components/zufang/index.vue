@@ -4,19 +4,16 @@
       <!-- 左侧边栏 -->
       <el-aside width="300px">
         <!-- 侧边栏上半部分 -->
+        <!-- 工单状态 -->
+        <div class="zc-state">
+          <h3>工单状态</h3>
+          <p>待更进</p>
+        </div>
+        <!-- 客户信息 -->
         <div class="aside-top">
             <h3>客户信息</h3>
             <div class="top-main">
               <ul>
-                <li>
-                  <p>来源</p>
-                  <p>电话</p>
-                </li>
-                <li>
-                  <p>来电号码</p>
-                  <p>12345678900</p>
-                </li>
-
                 <li>
                   <p>反馈方</p>
                   <p>租客</p>
@@ -34,6 +31,31 @@
             </div>
 
         </div>
+        <!-- 来电信息 -->
+        <div class="zc-incoming">
+          <h3>来电信息</h3>
+          <div class="incoming">
+            <ul>
+              <li>
+                <p>来电号码：</p>
+                <p>11112341234</p>
+              </li>
+              <li>
+                <p>所在地区：</p>
+                <p>上海</p>
+              </li>
+              <li>
+                <p>被叫号码：</p>
+                <p>025-12345678</p>
+              </li>
+              <li>
+                <p>呼入振铃:</p>
+                <p>00:00:05</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 房东信息 -->
         <div class="aside-botton">
             <h3>机构信息</h3>
             <div class="but-main">
@@ -41,21 +63,27 @@
                 <li>
                   <p>客户姓名</p>
                   <p>王多多</p>
-                  <a href="">tupian</a>
+                  <i class="el-icon-phone-outline"></i>
                 </li>
               </ul>
             </div>
+        </div>
+        <!-- 历史工单 -->
+        <div class="old-order">
+
         </div>
       </el-aside>
 
       <!-- 中间内容转租续租 -->
       <el-main>
+        <!-- 页面标题 -->
         <el-tag class="title">转租续租</el-tag>
+        <!--  -->
         <!-- 类型 -->
         <div class="type">
           <el-tabs type="border-card" >
             <el-tab-pane label="转租">
-              <el-button type="info"  @click="flowPath = true">转租流程</el-button>
+              <el-button  @click="flowPath = true">转租流程</el-button>
                <!-- 点击跳出转租流程弹框 -->
                 <el-dialog
                   :visible.sync="flowPath"
@@ -90,7 +118,7 @@
                       </ul>
                     </div>
                 </el-dialog>
-              <el-button type="info"  @click="retreat = true">机构转退租规则</el-button>
+              <el-button @click="retreat = true">机构转退租规则</el-button>
                <!-- 点击跳出转租流程弹框 -->
                 <el-dialog
                   :visible.sync="retreat"
@@ -136,12 +164,16 @@
                     </ul>
                   </div>
                 </el-dialog>
-              <el-button type="info">租约</el-button>
-              <el-button type="info">账单</el-button>
-              <el-button type="info">合同</el-button>
+              <el-button>租约</el-button>
+              <el-button>账单</el-button>
+              <el-button>合同</el-button>
             </el-tab-pane>
             <el-tab-pane label="续租">续租</el-tab-pane>
             <el-tab-pane label="退房">退房</el-tab-pane>
+            <el-tab-pane label="退转续组其他类别">
+              <el-button>退房</el-button>
+              <el-button>续租</el-button>
+            </el-tab-pane>
           </el-tabs>
         </div>
         <!-- 转租信息 -->
@@ -151,7 +183,53 @@
            <ul>
              <li>
                 <p>租约ID:</p> <el-tag type="info">123456</el-tag>
-                <a href="#">租约历史</a>
+                <!-- <a href="#">租约历史</a> -->
+                <el-button type="text" @click="dialogTableVisible = true">租约历史</el-button>
+                <el-dialog
+                  :visible.sync="dialogTableVisible"
+                  :modal="false"
+                  width="80%"
+                  show-close="false"
+                  :close-on-click-modal="false" >
+
+                    <el-table
+                      ref="multipleTable"
+                      :data="tableData3"
+                      tooltip-effect="dark"
+                      style="width: 100%">
+                      <el-table-column
+                        type="selection"
+                        width="55">
+                      </el-table-column>
+                      <el-table-column
+                        label="租约编号"
+                        width="120">
+                        <template slot-scope="scope">{{ scope.row.date }}</template>
+                      </el-table-column>
+                      <el-table-column
+                        prop="name"
+                        label="租约开始时间"
+                        width="120">
+                      </el-table-column>
+                      <el-table-column
+                        prop="address"
+                        label="租约结束时间"
+                        show-overflow-tooltip>
+                      </el-table-column>
+                      <el-table-column
+                        prop="address"
+                        label="房东姓名"
+                        show-overflow-tooltip>
+                      </el-table-column>
+                      <el-table-column
+                        prop="address"
+                        label="签约房源地址"
+                        show-overflow-tooltip>
+                      </el-table-column>
+
+
+                    </el-table>
+                </el-dialog>
              </li>
              <li>
                 <p>转租状态:</p> <el-tag type="info">寻找新客户中</el-tag>
@@ -245,7 +323,8 @@
               <el-date-picker
               v-model="value1"
               type="datetime"
-              clear-icon
+              size="10px"
+
               placeholder="选择日期时间">
              </el-date-picker>
             </div>
@@ -311,7 +390,49 @@ export default {
       // 点击转租流程跳出对话框
       flowPath: false,
       // 点击转租流程跳出对话框
-      retreat: false
+      retreat: false,
+      // 点击租约历史跳出对话框
+      tableData3: [
+        {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-08',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-06',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-07',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }
+      ],
+      multipleSelection: [],
+
+      dialogTableVisible: false,
+      dialogFormVisible: false
     }
   }
 }
@@ -328,10 +449,14 @@ export default {
   /* width: 400px; */
 }
 .el-input__inner {
-  width: 200px;
+  width: 145px;
 }
 .el-textarea__inner {
   height: 300px;
+}
+.el-input {
+  width: 0;
+  margin-left: 0;
 }
 </style>
 

@@ -1,15 +1,15 @@
 <template>
   <el-container>
-    
+
     <el-aside style="padding-top:60px" width="60px">
-      
+
       <el-menu
           default-active="2"
           router
           class="el-menu-vertical-demo">
           <el-menu-item index="home">
             <i class="el-icon-menu"></i>
-         
+
           </el-menu-item>
           <el-menu-item index="home">
             <i class="el-icon-document"></i>
@@ -17,22 +17,22 @@
           </el-menu-item>
           <el-menu-item index="4">
             <i class="el-icon-setting"></i>
-           
+
           </el-menu-item>
-          
+
        </el-menu>
-    
+
     </el-aside>
-    
+
     <el-container>
       <el-header height="50px">Header</el-header>
       <el-main router>
         <router-view/>
       </el-main>
     </el-container>
-      
+
   </el-container>
- 
+
 </template>
 <script>
 export default {

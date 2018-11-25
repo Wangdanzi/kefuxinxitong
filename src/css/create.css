@@ -1,0 +1,30 @@
+.side {
+  width: 200px;
+  background-color: #fff;
+  font-size: 14px;
+  height: 1000px;
+  position: absolute;
+  left: 60px;
+  top: 60px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.side .sideMsg {
+  line-height: 30px;
+}
+.side .sideFrom {
+  margin-top: 50px;
+  line-height: 25px;
+}
+.side .sideFrom .customerMsg {
+  font-weight: bold;
+  font-size: 18px;
+}
+.main {
+  margin: 0 200px 0 235px;
+}
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

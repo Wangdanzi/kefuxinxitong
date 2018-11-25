@@ -1,0 +1,1 @@
+//放置vuex需要的状态关联文件，设置公共的state、mutations

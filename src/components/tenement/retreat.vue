@@ -1,45 +1,41 @@
 <template>
-  <el-container>
-
-    <el-aside style="padding-top:60px" width="60px">
-
-      <el-menu
-          default-active="2"
-          router
-          class="el-menu-vertical-demo">
-          <el-menu-item index="home">
-            <i class="el-icon-menu"></i>
-
-          </el-menu-item>
-          <el-menu-item index="home">
-            <i class="el-icon-document"></i>
-         <router-view/>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-
-          </el-menu-item>
-
-       </el-menu>
-
-    </el-aside>
-
-    <el-container>
-      <el-header height="50px">Header</el-header>
-      <el-main router>
-        <router-view/>
-      </el-main>
-    </el-container>
-
-  </el-container>
+<el-dialog title="收货地址" :visible.sync="dialogTableVisible">
+  <el-table :data="gridData">
+    <el-table-column property="date" label="日期" width="150"></el-table-column>
+    <el-table-column property="name" label="姓名" width="200"></el-table-column>
+    <el-table-column property="address" label="地址"></el-table-column>
+  </el-table>
+</el-dialog>
 
 </template>
 <script>
 export default {
-  name: 'Layout.',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      gridData: [
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }
+      ],
+      dialogTableVisible: false,
+      dialogFormVisible: false
     }
   }
 }

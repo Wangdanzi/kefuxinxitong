@@ -28,7 +28,7 @@
       <el-header height="50px">Header</el-header>
       <el-main router>
         <router-view/>
-        
+
       </el-main>
     </el-container>
 
@@ -37,7 +37,7 @@
 </template>
 <script>
 export default {
-  // name: 'Layout.',
+  // name: 'Layout',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'

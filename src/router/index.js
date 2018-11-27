@@ -13,8 +13,16 @@ import index from '../components/findHouse.vue/index.vue';
 import Users from '../components/findHouse.vue/Users.vue';
 // 租房
 import indexVue from '../components/tenement/index.vue'
-import flowPath from '../components/tenement/flowPath.vue'
-import retreat from '../components/tenement/retreat.vue'
+// import flowPath from '../components/tenement/flowPath.vue'
+// import retreat from '../components/tenement/retreat.vue'
+import Lease from '../components/tenement/lease/Lease.vue'
+// import cishi from '../components/tenement/cishi/cishi.vue'
+
+// 电子合同
+// import Electroniccontract from '../components/electroniccontract/Electroniccontract.vue'
+
+
+
 
 
 Vue.use(Router)
@@ -62,24 +70,27 @@ export default new Router({
     },
     {
       path: '/indexVue', //地址栏显示的路径
-      name: 'indexVue',
-      component: indexVue, // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
+      component: indexVue,
     },
-    {
-      path: '/flowPath',
-      component: flowPath
+    // {
+    //   path: '/flowPath',
+    //   component: flowPath
 
-    },
-    {
-      path: '/retreat',
-      component: retreat
+    // },
+    // {
+    //   path: '/retreat',
+    //   component: retreat
 
-    },
-    // 全部记录详情
-    {
+    // },
+
+    { // 全部记录详情
       path: '/allrecord',
       component: AllRecord
 
+    },
+    { // 租约
+      path: '/lease',
+      component: Lease
     },
   ]
 })

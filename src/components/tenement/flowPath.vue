@@ -28,7 +28,6 @@
       <el-header height="50px">Header</el-header>
       <el-main router>
         <router-view/>
-        
       </el-main>
     </el-container>
 
@@ -37,7 +36,7 @@
 </template>
 <script>
 export default {
-  // name: 'Layout.',
+  name: 'Layout.',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -48,7 +47,7 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang ="less" scoped>
+<style scoped>
 .el-aside {
   color: #fff;
   text-align: center;

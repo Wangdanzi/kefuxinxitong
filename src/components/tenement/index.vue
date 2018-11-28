@@ -14,7 +14,6 @@
 
     <el-container>
       <!-- 引入头部公共部分 -->
-      <Layout></Layout>
       <!-- 左侧边栏 -->
       <el-aside width="300px">
         <!-- 侧边栏上半部分 -->
@@ -192,6 +191,7 @@
                 :modal="false"
                 :close-on-click-modal="false"
               >
+                <Lease></Lease>
                 <!-- 基本信息 -->
                 <div>
                   <h4>基本信息</h4>
@@ -319,7 +319,7 @@
                   <el-table-column property="address" label="内容"></el-table-column>
                 </el-table>
               </el-dialog>
-
+              <Lease></Lease>
               <el-button @click="bill = true">账单</el-button>
               <el-dialog
                 :visible.sync="bill"
@@ -548,6 +548,7 @@
         </el-form>
       </el-aside>
     </el-container>
+
     <!-- 转移技能组 -->
     <div class="transfer">
       <el-button @click="transfer = true">转移技能组</el-button>
@@ -569,16 +570,21 @@
 
 <script>
 import Layout from "../Layout";
+import Lease from "./lease/Lease";
+console.log(Lease);
+
+import cishi from "./cishi";
 export default {
   data() {
     return {
       // tab导航栏
       editableTabsValue: "2",
+      cishi,
       editableTabs: [
         {
           title: "Tab 1",
           name: "1",
-          content: "Tab 1 content"
+          content: cishi
         },
         {
           title: "Tab 2",
@@ -745,12 +751,15 @@ export default {
         this.editableTabs = tabs.filter(tab => tab.name !== targetName);
       }
     }
+  },
+  components: {
+    Layout,
+    // Lease,
+    cishi
   }
 };
 // 组建引入配置
-components: {
-  Layout;
-}
+// components
 </script>
 
 <style lang="less" scoped>

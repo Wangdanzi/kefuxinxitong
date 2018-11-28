@@ -11,6 +11,7 @@ import resolved from '../components/findHouse.vue/resolved.vue';
 import createWork from '../components/findHouse.vue/createWork.vue';
 import index from '../components/findHouse.vue/index.vue';
 import Users from '../components/findHouse.vue/Users.vue';
+import cishi from '../components/tenement/cishi.vue';
 // 租房
 import indexVue from '../components/tenement/index.vue'
 // import flowPath from '../components/tenement/flowPath.vue'
@@ -31,6 +32,12 @@ export default new Router({
       path: '/', //地址栏显示的路径
       name: 'layout',
       component: layout, // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
+      children: [{
+
+        path: '/ss',
+        component: indexVue
+
+      }]
     },
     {
       path: '/home', //地址栏显示的路径
@@ -41,6 +48,7 @@ export default new Router({
           name: 'followUp',
           component: followUp,
         },
+
         {
           path: 'appointment', //地址栏显示的路径
           name: 'appointment',
@@ -66,6 +74,9 @@ export default new Router({
         path: '/Users', //地址栏显示的路径
         name: 'Users',
         component: Users, // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
+      }, {
+        path: '/cishi',
+        component: cishi,
       }]
     },
     {

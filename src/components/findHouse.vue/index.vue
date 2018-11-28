@@ -7,7 +7,7 @@
         <a href="javascript:;" @click="logout">退出</a>
       </div>
        <h1 class="title">电商后台管理系统</h1>
-    </el-header> -->
+    </el-header>-->
     <el-container>
       <el-aside width="200px">
         <!-- el-menu: 菜单组件 -->
@@ -25,20 +25,21 @@
           text-color="#000"
           active-text-color="#ffd04b"
           unique-opened
-          router>
+          router
+        >
           <el-submenu index="users">
             <template slot="title" style="padding-left:1px">
               <i class="el-icon-location"></i>
               <span>所有工单 200</span>
             </template>
             <!-- 放菜单项 -->
-            <el-menu-item index="/users">            
+            <el-menu-item index="/users">
               <span slot="title">今日待跟进 2</span>
             </el-menu-item>
-            <el-menu-item index="">              
+            <el-menu-item index>
               <span slot="title">预约代办 23</span>
             </el-menu-item>
-            <el-menu-item index="">             
+            <el-menu-item index>
               <span slot="title">已解决 23</span>
             </el-menu-item>
           </el-submenu>
@@ -47,16 +48,16 @@
               <i class="el-icon-location"></i>
               <span>房源组 71</span>
             </template>
-            <el-menu-item index="roles">            
+            <el-menu-item index="roles">
               <span slot="title">今日待跟进</span>
             </el-menu-item>
-            <el-menu-item index="">              
+            <el-menu-item index="cishi">
               <span slot="title">预约代办</span>
             </el-menu-item>
-            <el-menu-item index="">               
+            <el-menu-item index>
               <span slot="title">角色列表</span>
             </el-menu-item>
-            <el-menu-item index="">               
+            <el-menu-item index>
               <span slot="title">已解决</span>
             </el-menu-item>
           </el-submenu>
@@ -71,14 +72,14 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="less" scoped>
 // 如果给style添加scoped属性，样式只会在当前组件生效
 // 实现原理： 如果给当前组件的style添加了scoped,,,,把当前组件中所有的div都增加一个随机的属性
 .home {
-  height: 100%;
+  height: calc(100vh);
   .el-header {
     .logout {
       width: 180px;

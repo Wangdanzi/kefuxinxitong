@@ -4,6 +4,11 @@
 /deep/.el-input {
   width: px;
 }
+/deep/.el-dialog__body {
+  padding: 0;
+  background-color: #e0ecff;
+  border: 1px solid #99ccff;
+}
 .zf-index {
   margin-top: 20px;
   /* // 左侧边栏 */
@@ -39,16 +44,15 @@
       height: 52px;
       font-size: 18px;
       line-height: 52px;
-      color: aquamarine;
+      // color: 0e2d5f;
       margin-bottom: 10px;
     }
-
     h3 {
-      padding: 10px 0 0 5px;
-      color: aqua;
+      padding-left: 10px;
+      color: #0e2d5f;
     }
     .one {
-      border: 1px solid #000;
+      border: 1px solid #99ccff;
       background-color: #fff;
       padding: 30px 0;
       margin: 20px;
@@ -75,18 +79,28 @@
           // float: left;
         }
       }
+      p {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
     }
     /* // ZU租约信息 */
     .lease {
+      p {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
     }
     li {
       padding-bottom: 10px;
     }
-    p {
-      display: inline-block;
-      width: 150px;
-      text-align: right;
-    }
+    // p {
+    //   display: inline-block;
+    //   width: 150px;
+    //   text-align: right;
+    // }
     .el-tag {
       width: 150px;
       text-align: center;

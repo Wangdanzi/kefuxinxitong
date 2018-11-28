@@ -1,6 +1,8 @@
-.dialog__header {
-  padding: 0 !important;
-  background-color: red;
+/deep/.el-dialog__header {
+  padding: 0;
+}
+/deep/.el-input {
+  width: px;
 }
 .zf-index {
   margin-top: 20px;
@@ -21,8 +23,11 @@
     }
     li > p:nth-of-type(2) {
       display: inline-block;
-      width: 50px;
+      // width: 50px;
       text-align: left;
+    }
+    /deep/.el-input {
+      width: 120px;
     }
   }
   /* // 主内容部分 */
@@ -97,10 +102,7 @@
     > p {
       text-align: center;
     }
-    > .el-input {
-      // height: 400px;
-      // margin-bottom: 50px;
-    }
+
     > .ce {
       padding-top: 10px;
     }
@@ -109,8 +111,16 @@
       bottom: 0;
       left: 0;
     }
-    .el-textarea__inner {
-      min-height: 500px;
+    /deep/.el-textarea__inner {
+      height: 500px;
     }
+    /deep/.el-input {
+      width: 200px;
+    }
+  }
+  .transfer {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }

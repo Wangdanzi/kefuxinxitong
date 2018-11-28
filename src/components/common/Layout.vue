@@ -1,56 +1,43 @@
 <template>
   <el-container>
-
-    <el-aside style="padding-top:60px" width="60px">
-
-      <el-menu
-          default-active="2"
-          router
-          class="el-menu-vertical-demo">
-          <el-menu-item index="home">
-            <i class="el-icon-menu"></i>
-
-          </el-menu-item>
-          <el-menu-item index="home">
-            <i class="el-icon-document"></i>
-         <router-view/>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-
-          </el-menu-item>
-
-       </el-menu>
-
+    <el-aside style="padding-top:60px; display:inline-block" width="60px">
+      <el-menu default-active="home" router class="el-menu-vertical-demo" unique-opened>
+        <el-menu-item index="/home">
+          <i class="el-icon-menu"></i>
+          <router-view/>
+        </el-menu-item>
+        <el-menu-item index="/tenement">
+          <i class="el-icon-document"></i>
+          <router-view/>
+        </el-menu-item>
+        <el-menu-item index="4">
+          <i class="el-icon-setting"></i>
+        </el-menu-item>
+      </el-menu>
     </el-aside>
-
     <el-container>
       <!-- <el-header height="50px">Header</el-header> -->
-          <iframe
-      v-show="iframeState"
-      id="show-iframe"
-      frameborder="0"
-      name="showHere"
-      scrolling="auto"
-      src="http://192.168.62.221/Admin/AgentPublic/agentPage?400_cno=002&400_sign=cded0ed414279610e4d42fcb0a5f3f20"
-    ></iframe>
-      <el-main router>
+      <iframe
+        v-show="iframeState"
+        id="show-iframe"
+        frameborder="0"
+        name="showHere"
+        scrolling="auto"
+        src="http://192.168.62.221/Admin/AgentPublic/agentPage?400_cno=002&400_sign=cded0ed414279610e4d42fcb0a5f3f20"
+      ></iframe>
+      <el-main>
         <router-view/>
-
       </el-main>
     </el-container>
-
   </el-container>
-
 </template>
 <script>
 export default {
-  name: 'Layout',
-   data() {
+  name: "Layout",
+  data() {
     return {
-      iframeState: true,
+      iframeState: true
       // goBackState: false,
-    
     };
   },
   mounted() {
@@ -64,10 +51,9 @@ export default {
     goBack() {
       this.goBackState = false;
       this.iframeState = false;
-    },
+    }
   }
-  }
-
+};
 </script>
 
 

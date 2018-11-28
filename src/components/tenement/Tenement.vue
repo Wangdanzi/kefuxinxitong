@@ -1,6 +1,7 @@
 <template>
   <div class="zf-index">
     <!-- tag导航工单编号栏 -->
+    <!-- <Layout></Layout> -->
     <div>
       <el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
         <el-tab-pane
@@ -569,7 +570,7 @@
 </template>
 
 <script>
-import Layout from "../Layout";
+import Layout from "../common/Layout";
 import Lease from "./lease/Lease";
 console.log(Lease);
 

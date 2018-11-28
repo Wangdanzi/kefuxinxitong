@@ -1,18 +1,9 @@
 <template>
   <el-container class="home">
-    <!-- <el-header>
-      <div class="logo"></div>
-      <div class="logout">
-        欢迎光临
-        <a href="javascript:;" @click="logout">退出</a>
-      </div>
-       <h1 class="title">电商后台管理系统</h1>
-    </el-header>-->
     <el-container>
       <el-aside width="200px">
         <!-- el-menu: 菜单组件 -->
         <!-- default-active：默认选中的菜单 -->
-        <!-- el-submenu: 子菜单 -->
         <!-- template：表示子菜单的内容 -->
         <!-- el-menu-item-group： 子菜单的分组 -->
         <!-- el-menu-item：菜单项  -->

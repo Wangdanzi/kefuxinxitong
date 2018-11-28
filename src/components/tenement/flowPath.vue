@@ -25,18 +25,9 @@
     </el-aside>
 
     <el-container>
-      <!-- <el-header height="50px">Header</el-header> -->
-          <iframe
-      v-show="iframeState"
-      id="show-iframe"
-      frameborder="0"
-      name="showHere"
-      scrolling="auto"
-      src="http://192.168.62.221/Admin/AgentPublic/agentPage?400_cno=002&400_sign=cded0ed414279610e4d42fcb0a5f3f20"
-    ></iframe>
+      <el-header height="50px">Header</el-header>
       <el-main router>
         <router-view/>
-
       </el-main>
     </el-container>
 
@@ -45,34 +36,18 @@
 </template>
 <script>
 export default {
-  name: 'Layout',
-   data() {
+  name: 'Layout.',
+  data() {
     return {
-      iframeState: true,
-      // goBackState: false,
-    
-    };
-  },
-  mounted() {
-    const oIframe = document.getElementById("show-iframe");
-    const deviceWidth = document.documentElement.clientWidth;
-    const deviceHeight = document.documentElement.clientHeight;
-    oIframe.style.width = deviceWidth + "px";
-    oIframe.style.height = deviceHeight + "px";
-  },
-  methods: {
-    goBack() {
-      this.goBackState = false;
-      this.iframeState = false;
-    },
+      msg: 'Welcome to Your Vue.js App'
+    }
   }
-  }
-
+}
 </script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang ="less" scoped>
+<style scoped>
 .el-aside {
   color: #fff;
   text-align: center;

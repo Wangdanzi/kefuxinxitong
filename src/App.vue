@@ -17,10 +17,22 @@ export default {
   color: #2c3e50;
   /* margin-top: 60px; */
 }
-body,html{
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  background-color: #e0ecff;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #3399ff;
 }
 </style>

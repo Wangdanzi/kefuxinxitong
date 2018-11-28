@@ -1,22 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import layout from '../components/findHouse.vue/layout.vue'
-import home from '../components/findHouse.vue/home.vue';
-import followUp from '../components/findHouse.vue/followUp.vue';
-import appointment from '../components/findHouse.vue/appointment.vue';
-import resolved from '../components/findHouse.vue/resolved.vue';
-import createWork from '../components/findHouse.vue/createWork.vue';
-import index from '../components/findHouse.vue/index.vue';
-import Users from '../components/findHouse.vue/Users.vue';
-import indexVue from '../components/zufang/index.vue'
+import layouVue from '../components/common/layouVue.vue'
+import home from '../components/findHouse/home.vue';
+import followUp from '../components/findHouse/followUp.vue';
+import appointment from '../components/findHouse/appointment.vue';
+import resolved from '../components/findHouse/resolved.vue';
+import createWork from '../components/findHouse/createWork.vue';
+import index from '../components/findHouse/index.vue';
+import Users from '../components/findHouse/Users.vue';
+import indexVue from '../components/zufang/index.vue';
+import followBanner from '../components/findHouse/followBanner.vue';
 Vue.use(Router)
 export default new Router({
   routes: [
-        {
-          path: '/',//地址栏显示的路径
-          name: 'layout',
-          component: layout , // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
-        },
         {
           path: '/home',//地址栏显示的路径
           name: 'home',
@@ -40,9 +36,19 @@ export default new Router({
           ]
         },
         {
+          path: '/',//地址栏显示的路径
+          name: 'layouVue',
+          component: layouVue , // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
+        },
+        {
           path: '/createWork',//地址栏显示的路径
           name: 'createWork',
           component: createWork , // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”. 
+        },
+        {
+          path: '/followBanner',//地址栏显示的路径
+          name: 'followBanner',
+          component: followBanner , // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”. 
         },
         {
           path: '/index',//地址栏显示的路径
@@ -64,17 +70,3 @@ export default new Router({
   ]
 })
 
-// export default new Router({
-//   routes:[
-//     {
-//       path: '/',//地址栏显示的路径
-//       name: 'home',
-//       component: home , // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
-//     },
-//     {
-//       path: '/layout',//地址栏显示的路径
-//       name: 'layout',
-//       component: layout , // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
-//     }
-//   ]
-// })

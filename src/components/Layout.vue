@@ -1,7 +1,7 @@
 <template>
   <el-container>
     
-    <el-aside style="padding-top:60px" width="60px">
+    <el-aside style="padding-top:60px">
       
       <el-menu
           default-active="2"
@@ -17,11 +17,8 @@
           </el-menu-item>
           <el-menu-item index="4">
             <i class="el-icon-setting"></i>
-           
           </el-menu-item>
-          
        </el-menu>
-    
     </el-aside>
     
     <el-container>

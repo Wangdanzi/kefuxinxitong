@@ -3,7 +3,7 @@
     <el-container>
         <el-aside width="60px">
              <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
-                    <el-menu-item index="/home">
+                    <el-menu-item index="">
                         <i class="el-icon-location"></i>
                     </el-menu-item>
             </el-menu>
@@ -21,7 +21,7 @@
         <el-container>
             <el-header></el-header>
             <el-main>
-                <create></create>
+                <followUp></followUp>
             </el-main>
         </el-container>
     </el-container>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import create from "../findHouse.vue/create"
+import followUp from "../findHouse/followUp"
 export default {
   data() {
     return {
@@ -38,7 +38,7 @@ export default {
     };
   },
   components:{
-      create
+      followUp
   },
   methods:{
        handleSelect(key, keyPath) {

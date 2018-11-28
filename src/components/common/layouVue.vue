@@ -21,7 +21,7 @@
         <el-container>
             <el-header></el-header>
             <el-main>
-               <home></home>
+                <home></home>
             </el-main>
         </el-container>
     </el-container>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import home from "../findHouse.vue/home"
+import home from "../findHouse/home"
 export default {
   data() {
     return {

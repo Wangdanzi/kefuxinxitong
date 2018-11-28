@@ -17,6 +17,7 @@ import indexVue from '../components/tenement/index.vue'
 // import flowPath from '../components/tenement/flowPath.vue'
 // import retreat from '../components/tenement/retreat.vue'
 import Lease from '../components/tenement/lease/Lease.vue'
+import Layout from '../components/Layout.vue'
 // import cishi from '../components/tenement/cishi/cishi.vue'
 
 // 电子合同
@@ -78,6 +79,10 @@ export default new Router({
         path: '/cishi',
         component: cishi,
       }]
+    },
+    {
+      path: '/layoutw',
+      component: Layout
     },
     {
       path: '/indexVue', //地址栏显示的路径

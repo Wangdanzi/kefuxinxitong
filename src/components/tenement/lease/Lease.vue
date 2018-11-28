@@ -19,9 +19,8 @@
       frameborder="0"
       name="showHere"
       scrolling="auto"
-      src="http://www.baidu.com"
+      src="http://192.168.62.221/Admin/AgentPublic/agentPage?400_cno=002&400_sign=cded0ed414279610e4d42fcb0a5f3f20"
     ></iframe>
-    666
   </div>
 </template>
 <script>
@@ -41,15 +40,8 @@ export default {
   name: "Lease",
   data() {
     return {
-      iframeState: true,
+      iframeState: true
       // goBackState: false,
-      item: [
-        {
-          name: "",
-          link:
-            "http://192.168.62.221/Admin/AgentPublic/agentPage?400_cno=002&400_sign=cded0ed414279610e4d42fcb0a5f3f20"
-        }
-      ]
     };
   },
   mounted() {
@@ -63,10 +55,6 @@ export default {
     goBack() {
       this.goBackState = false;
       this.iframeState = false;
-    },
-    showIframe() {
-      this.goBackState = true;
-      this.iframeState = true;
     }
   }
 };

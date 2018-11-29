@@ -4,11 +4,11 @@
       <el-menu default-active="home" router class="el-menu-vertical-demo" unique-opened>
         <el-menu-item index="/home">
           <i class="el-icon-menu"></i>
-          <router-view/>
+          <!-- <router-view/> -->
         </el-menu-item>
         <el-menu-item index="/tenement">
           <i class="el-icon-document"></i>
-          <router-view/>
+          <!-- <router-view/> -->
         </el-menu-item>
         <el-menu-item index="4">
           <i class="el-icon-setting"></i>
@@ -16,15 +16,16 @@
       </el-menu>
     </el-aside>
     <el-container>
-      <!-- <el-header height="50px">Header</el-header> -->
-      <iframe
-        v-show="iframeState"
-        id="show-iframe"
-        frameborder="0"
-        name="showHere"
-        scrolling="auto"
-        src="http://192.168.62.221/Admin/AgentPublic/agentPage?400_cno=002&400_sign=cded0ed414279610e4d42fcb0a5f3f20"
-      ></iframe>
+      <el-header height="60px">
+        <iframe
+          v-show="iframeState"
+          id="show-iframe"
+          frameborder="0"
+          name="showHere"
+          scrolling="auto"
+          src="http://192.168.62.221/Admin/AgentPublic/agentPage?400_cno=002&400_sign=cded0ed414279610e4d42fcb0a5f3f20"
+        ></iframe>
+      </el-header>
       <el-main>
         <router-view/>
       </el-main>
@@ -56,6 +57,8 @@ export default {
 };
 </script>
 
+<style>
+</style>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang ="less" scoped>
@@ -65,8 +68,7 @@ export default {
   background-color: #313b42;
 }
 .el-header {
-  background-color: #2bbfbd;
-  height: 100px;
+  background-color: #3e88c6;
 }
 .el-main {
   background-color: #f2f4f8;

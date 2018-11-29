@@ -10,7 +10,6 @@
   border: 1px solid #99ccff;
 }
 .zf-index {
-  margin-top: 20px;
   /* // 左侧边栏 */
   .el-aside {
     background-color: #fff;
@@ -39,12 +38,14 @@
   .el-main {
     background-color: #fff;
     padding: 10px;
+    .ce-main {
+      height: 500px;
+    }
     .title {
       background-color: skyblue;
       height: 52px;
       font-size: 18px;
       line-height: 52px;
-      // color: 0e2d5f;
       margin-bottom: 10px;
     }
     h3 {
@@ -76,7 +77,6 @@
         .el-tag {
           width: 50px;
           margin-left: 20px;
-          // float: left;
         }
       }
       p {
@@ -94,13 +94,8 @@
       }
     }
     li {
-      padding-bottom: 10px;
+      // padding-bottom: 10px;
     }
-    // p {
-    //   display: inline-block;
-    //   width: 150px;
-    //   text-align: right;
-    // }
     .el-tag {
       width: 150px;
       text-align: center;
@@ -136,5 +131,17 @@
     position: absolute;
     top: 0;
     right: 0;
+    text-align: center;
+    padding: 10px;
+    /deep/.el-textarea__inner {
+      // height: 200px;
+      height: 200px;
+    }
+    /deep/.el-dialog__body {
+      padding: 10px;
+    }
+    .el-button {
+      margin-top: 10px;
+    }
   }
 }

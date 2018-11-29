@@ -29,7 +29,6 @@ export default new Router({
           path: '/home',
           name: 'home',
           component: home,
-
           children: [{
               path: 'followUp',
               name: 'followUp',
@@ -52,6 +51,16 @@ export default new Router({
           path: '/tenement',
           component: Tenement
         },
+        {
+          path: '/index',
+          name: 'index',
+          component: index,
+          children: [{
+            path: '/Users',
+            name: 'Users',
+            component: Users
+          }]
+        },
 
       ]
     },
@@ -70,16 +79,16 @@ export default new Router({
       name: 'followBanner',
       component: followBanner
     },
-    {
-      path: '/index',
-      name: 'index',
-      component: index,
-      children: [{
-        path: '/Users',
-        name: 'Users',
-        component: Users
-      }]
-    },
+    // {
+    //   path: '/index',
+    //   name: 'index',
+    //   component: index,
+    //   children: [{
+    //     path: '/Users',
+    //     name: 'Users',
+    //     component: Users
+    //   }]
+    // },
 
     { // 租约5
       path: '/lease',

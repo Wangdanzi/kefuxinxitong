@@ -6,11 +6,11 @@
           <i class="el-icon-menu"></i>
           <!-- <router-view/> -->
         </el-menu-item>
-        <el-menu-item index="/tenement">
+        <el-menu-item index="/index">
           <i class="el-icon-document"></i>
           <!-- <router-view/> -->
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="/tenement">
           <i class="el-icon-setting"></i>
         </el-menu-item>
       </el-menu>
@@ -73,7 +73,6 @@ export default {
 .el-main {
   background-color: #f2f4f8;
   color: #333;
-  height: 1000px;
-  padding: 10px;
+  padding: 0px;
 }
 </style>

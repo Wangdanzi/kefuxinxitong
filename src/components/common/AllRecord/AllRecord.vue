@@ -13,7 +13,7 @@
     <el-tab-pane label="描述记录" name="second">
       <el-table :data="describe" style="width: 100%">
         <el-table-column prop="date" label="时间" width="150"></el-table-column>
-        <el-table-column prop="name" label="内容" width="250"></el-table-column>
+        <el-table-column prop="name" label="内容" width="250" v-model="describeContent"></el-table-column>
         <el-table-column prop="movement" label="动作" width="180"></el-table-column>
         <el-table-column prop="address" label="处理人"></el-table-column>
       </el-table>
@@ -21,7 +21,7 @@
     <!-- 短信记录 -->
     <el-tab-pane label="短信记录" name="third">
       <el-table :data="note" style="width: 100%">
-        <el-table-column prop="date" label="时间" width="150"></el-table-column>
+        <el-table-column prop="date" label="时间" width="150" v-model="noteContent"></el-table-column>
         <el-table-column prop="name" label="内容" width="250"></el-table-column>
         <el-table-column prop="movement" label="动作" width="180"></el-table-column>
         <el-table-column prop="address" label="处理人"></el-table-column>
@@ -36,6 +36,7 @@
         <el-table-column prop="address" label="处理人"></el-table-column>
       </el-table>
     </el-tab-pane>
+    <div></div>
   </el-tabs>
 </template>
 <script>
@@ -47,13 +48,13 @@ export default {
       // 全部记录
       all: [
         {
-          date: "2016-05-02",
+          date: this.noteContent,
           name: "你是我的眼带我领略四季的变化",
           movement: "租客打给客服",
           address: "ni  "
         },
         {
-          date: "2016-05-04",
+          date: this.value,
           name: "王小虎",
           movement: "推送短信",
           address: "ni  "
@@ -125,6 +126,7 @@ export default {
           address: "ni  "
         }
       ],
+      describeContent: "1212",
       // 短信记录
       note: [
         {

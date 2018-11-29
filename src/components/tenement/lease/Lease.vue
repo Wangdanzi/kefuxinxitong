@@ -132,7 +132,20 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  // 审核历史
+  data() {
+    return {
+      auditData: [
+        {
+          date: "2016-05-03",
+          name: "审核历史",
+          address: "上海市普陀区金沙江路 1518 弄"
+        }
+      ]
+    };
+  }
+};
 </script>
 
 <style lang="less" scoped>

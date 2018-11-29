@@ -33,12 +33,11 @@ export default {
   data() {
     return {
       // 点击账单跳出对话框
-      bill: false,
       // <!-- 账单表格 -->
       billData: [
         {
           date: "",
-          name: "王小虎",
+          name: "账单",
           address: "上海市普陀区金沙江路 1516 弄"
         }
       ]

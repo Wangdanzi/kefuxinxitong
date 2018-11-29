@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // 公共
 import Layout from '../components/common/Layout.vue'
-import AllRecord from '../components/common/AllRecord'
+import AllRecord from '../components/common/AllRecord/AllRecord'
 // 找房源
 import home from '../components/findHouse/home.vue'
 import followUp from '../components/findHouse/followUp.vue'
@@ -25,55 +25,41 @@ export default new Router({
       path: '/', //地址栏显示的路径
       name: 'layout',
       component: Layout, // layout是组件的名字，这个路由对应跳转到的组件。。注意component没有加“s”.
-      chlidren: [{
-        path: '/home',
-        name: 'home',
-        component: home,
-        children: [{
-            path: 'followUp',
-            name: 'followUp',
-            component: followUp
-          },
-          {
-            path: 'appointment',
-            name: 'appointment',
-            component: appointment
-          },
-          {
-            path: 'resolved',
-            name: 'resolved',
-            component: resolved
-          }
-        ]
-      }, ]
+      children: [{
+          path: '/home',
+          name: 'home',
+          component: home,
+
+          children: [{
+              path: 'followUp',
+              name: 'followUp',
+              component: followUp
+            },
+            {
+              path: 'appointment',
+              name: 'appointment',
+              component: appointment
+            },
+            {
+              path: 'resolved',
+              name: 'resolved',
+              component: resolved
+            }
+          ]
+        },
+        // 租房
+        {
+          path: '/tenement',
+          component: Tenement
+        },
+
+      ]
     },
     {
       path: '/allrecord',
-      name: 'AllRecord',
+      // name: 'AllRecord',
       component: AllRecord
     },
-    // 找房源
-    // {
-    //   path: '/home',
-    //   name: 'home',
-    //   component: home,
-    //   children: [{
-    //       path: 'followUp',
-    //       name: 'followUp',
-    //       component: followUp
-    //     },
-    //     {
-    //       path: 'appointment',
-    //       name: 'appointment',
-    //       component: appointment
-    //     },
-    //     {
-    //       path: 'resolved',
-    //       name: 'resolved',
-    //       component: resolved
-    //     }
-    //   ]
-    // },
     {
       path: '/createWork',
       name: 'createWork',
@@ -94,12 +80,8 @@ export default new Router({
         component: Users
       }]
     },
-    // 租房
-    {
-      path: '/tenement',
-      component: Tenement
-    },
-    { // 租约
+
+    { // 租约5
       path: '/lease',
       component: Lease
     }
